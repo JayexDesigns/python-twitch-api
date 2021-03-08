@@ -4,7 +4,7 @@
 <h2>Installing</h2>
 <p>For now the way to install this library is to clone this repository or download twitchAPI.py, while having this file in the same folder of your project will make it available to import the library</p>
 <pre lang="python">
-    import twitchAPI
+import twitchAPI
 </pre>
 <br>
 <h2>Authentication</h2>
@@ -12,7 +12,7 @@
 <br>
 <p>Once you have both the Client ID and the Client Secret you can use this library, you will need a OAuth Token before using any of the library functions, here is an example code on how to get the OAuth Token:</p>
 <pre lang="python">
-    import twitchAPI
+import twitchAPI
 
     clientId = "Your Client ID"
     clientSecret = "Your Client Secret"
