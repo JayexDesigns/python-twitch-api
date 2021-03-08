@@ -1,6 +1,40 @@
 #Imports
+import datetime
 import requests
 import json
+
+
+
+#This Class Stores The Authentication Token And The Time In Which It Expires
+class Auth:
+    def __init__(self, token, tokenType, expire):
+        self.token = token
+        self.type = tokenType
+        self._expire = expire
+        self._time = datetime.datetime.now()
+        self._fullToken = f"{tokenType.capitalize()} {token}"
+    
+    @property
+    def expire(self):
+        return self._time + datetime.timedelta(0, self._expire)
+
+    @property
+    def fullToken(self):
+        if datetime.datetime.now() >= self.expire:
+            raise AuthTokenExpired
+        return self._fullToken
+
+
+
+#Exception To Rise When A Token Has Expired
+class AuthTokenExpired(Exception):
+    """Exception raised for when an auth token has expired"""
+    def __init__(self, message="The token you are trying to use has expired"):
+        self.message = message
+        super().__init__(self.message)
+    
+    def __str__(self):
+        return self.message
 
 
 
@@ -12,7 +46,8 @@ def authentication(clientId, clientSecret):
         "client_secret": clientSecret,
         "grant_type": "client_credentials"
     }
-    return requests.post(url=url, params=params).json()
+    auth = requests.post(url=url, params=params).json()
+    return Auth(auth["access_token"], auth["token_type"], auth["expires_in"])
 
 
 
@@ -73,9 +108,7 @@ def getStreamInfo(clientId, authToken, streamerId):
 
 
 #Mixes All The Responses
-def getAllStreamerInfo(clientId, clientSecret, streamerName):
-    authToken = authentication(clientId, clientSecret)
-    authToken = f"{authToken['token_type'].capitalize()} {authToken['access_token']}"
+def getAllStreamerInfo(clientId, authToken, streamerName):
     streamerInfo = {}
     streamInfo = {}
 
