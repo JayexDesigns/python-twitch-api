@@ -1,4 +1,4 @@
-<h1 align="center">Python Twitch API</h1>
+<h1 align="center">Python Twitch API (WIP)</h1>
 <p align="center">A python library to comunicate with the twitch API easily</p>
 <br>
 <h2>Installing</h2>
