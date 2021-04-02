@@ -1,5 +1,5 @@
 <h1 align="center">Python Twitch API (WIP)</h1>
-<p align="center">A python library to comunicate with the twitch API easily</p>
+<p align="center">A python library to communicate with the twitch API easily</p>
 <br>
 <h2>Installing</h2>
 <p>For now the way to install this library is to clone this repository or download twitchAPI.py, while having this file in the same folder of your project will make it available to import the library</p>
