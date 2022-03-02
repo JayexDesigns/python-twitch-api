@@ -2,13 +2,13 @@
 <p align="center">A python library to communicate with the twitch API easily</p>
 <br>
 <h2>Installing</h2>
-<p>For now, the way to install this library is to clone this repository or download twitchAPI.py, while having this file in the same folder of your project will make it available to import the library</p>
+<p>For now, the way to install this library is to clone this repository or download twitchAPI.py, while having this file in the same folder of your project will make it available to import the library.</p>
 <pre lang="python">
 import twitchAPI
 </pre>
 <br>
 <h2>Authentication</h2>
-<p>To use this library first you need to have a twitch application, go to the <a src="https://dev.twitch.tv/console/apps">Twitch developer console</a> and go to the apps tab, then click the register your application button. Add a name and a category to your application and create it, once it's done you can click on manage to get the Client ID and the Client Secret, both needed to use the API</p>
+<p>To use this library first you need to have a twitch application, go to the <a src="https://dev.twitch.tv/console/apps">Twitch developer console</a> and go to the apps tab, then click the register your application button. Add a name and a category to your application and create it, once it's done you can click on manage to get the Client ID and the Client Secret, both needed to use the API.</p>
 <br>
 <p>Once you have both the Client ID and the Client Secret you can use this library, you will need an OAuth Token before using any of the library functions, here is an example code on how to get the OAuth Token:</p>
 <pre lang="python">
@@ -22,7 +22,7 @@ import twitchAPI
 </pre>
 <br>
 <h2>Use</h2>
-<p>Now you can start gathering information and interacting with the API, here there is a list of methods you can call and what they do</p>
+<p>Now you can start gathering information and interacting with the API, here there's a list of methods you can call and what they do:</p>
 <ul>
     <li>searchChannel(clientId, authToken, streamerName) -> This will give you a dictionary with some information of the streamer, including the streamer id</li>
     <li>getUser(clientId, authToken, streamerId) -> This will give you a dictionary with some information of the user such as it's description</li>
